@@ -1,0 +1,206 @@
+/* === RESET & BOX SIZING === */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* === VARIABEL WARNA & TIPOGRAFI === */
+:root {
+    --color-primary: #0f172a;    /* Dark Slate */
+    --color-accent: #2563eb;     /* Blue Action */
+    --color-accent-hover: #1d4ed8;
+    --color-bg: #f8fafc;         /* Light Gray Background */
+    --color-card-bg: #ffffff;
+    --color-text: #334155;
+    --color-badge-sale: #dc2626; /* Red */
+    --color-badge-new: #16a34a;  /* Green */
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* === NAVBAR FIXED === */
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-card-bg);
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.store-brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+.nav-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* === ELEMEN STICKY === */
+.sticky-category {
+    position: sticky;
+    top: 65px; /* Kompensasi tinggi navbar fixed */
+    background-color: rgba(248, 250, 252, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 1rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 900;
+}
+
+.sticky-category h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+/* === KONTEN UTAMA & KOMPENSASI PADDING === */
+.main-content {
+    padding: 2rem; /* Kompensasi tambahan dari navbar & sticky header */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.products-container {
+    text-align: center; /* Mendukung display: inline-block agar berderet rapi di tengah */
+}
+
+/* === KARTU PRODUK (Display Inline-Block & Box Model Konsisten) === */
+.product-card {
+    display: inline-block;
+    vertical-align: top;
+    position: relative; /* Induk untuk badge absolute */
+    background-color: var(--color-card-bg);
+    width: 100%;
+    max-width: 240px;    /* Batas lebar konsisten per kartu */
+    margin: 15px;        /* Margin konsisten antar kartu */
+    padding: 1rem;       /* Padding konsisten di dalam kartu */
+    border-radius: 12px; /* Border-radius konsisten */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* === HOVER EFFECT (Box-shadow menebal & transisi) === */
+.product-card:hover {
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+/* === BADGE ABSOLUTE === */
+.badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.badge-sale {
+    background-color: var(--color-badge-sale);
+}
+
+.badge-new {
+    background-color: var(--color-badge-new);
+}
+
+/* === GAMBAR DENGAN OVERFLOW HIDDEN & BORDER RADIUS === */
+.card-img-wrapper {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;    /* Menyembunyikan bagian gambar yang melebihi kontainer */
+    border-radius: 8px;  /* Membuat sudut gambar melompat/membulat di dalam kartu */
+    background-color: #e2e8f0;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Efek zoom halus pada gambar saat kartu di-hover */
+.product-card:hover .card-img-wrapper img {
+    transform: scale(1.05);
+}
+
+/* === DETAIL & TOMBOL BELI === */
+.card-body {
+    padding-top: 1rem;
+}
+
+.product-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0 0 0.5rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-price {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin: 0 0 1rem 0;
+}
+
+.btn-buy {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-buy:hover {
+    background-color: var(--color-accent-hover);
+}
+
+/* === FOOTER === */
+.site-footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 2rem;
+}

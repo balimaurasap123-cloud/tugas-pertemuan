@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Toko - Kartu Produk</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS External -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 2. Navbar Fixed di Atas -->
+    <header class="navbar-fixed">
+        <div class="nav-container">
+            <span class="store-brand">TokoElektronik.id</span>
+            <nav class="nav-links">
+                <a href="#">Beranda</a>
+                <a href="#">Katalog</a>
+                <a href="#">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 3. Elemen Sticky (Sub-judul Kategori yang menempel saat scroll) -->
+    <div class="sticky-category">
+        <h2>Katalog Produk Unggulan</h2>
+    </div>
+
+    <!-- Konten Utama: 4 Kartu Produk Berderet -->
+    <main class="main-content">
+        <div class="products-container">
+
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <!-- 1. Badge Absolute dengan Induk Relative -->
+                <span class="badge badge-sale">Diskon 20%</span>
+                <!-- 4. Gambar dengan overflow:hidden & border-radius -->
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/prod1/400/300" alt="Headphone Wireless">
+                </div>
+                <div class="card-body">
+                    <h3 class="product-title">Headphone Wireless Pro</h3>
+                    <p class="product-price">Rp 750.000</p>
+                    <button class="btn-buy">Beli Sekarang</button>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="product-card">
+                <span class="badge badge-new">Baru</span>
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/prod2/400/300" alt="Smartwatch Sport">
+                </div>
+                <div class="card-body">
+                    <h3 class="product-title">Smartwatch Sport Series</h3>
+                    <p class="product-price">Rp 1.250.000</p>
+                    <button class="btn-buy">Beli Sekarang</button>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="product-card">
+                <span class="badge badge-sale">Diskon 15%</span>
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/prod3/400/300" alt="Kamera Mirrorless">
+                </div>
+                <div class="card-body">
+                    <h3 class="product-title">Kamera Mirrorless Mini</h3>
+                    <p class="product-price">Rp 4.500.000</p>
+                    <button class="btn-buy">Beli Sekarang</button>
+                </div>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="product-card">
+                <span class="badge badge-new">Terlaris</span>
+                <div class="card-img-wrapper">
+                    <img src="https://picsum.photos/seed/prod4/400/300" alt="Speaker Bluetooth">
+                </div>
+                <div class="card-body">
+                    <h3 class="product-title">Speaker Bluetooth Bass</h3>
+                    <p class="product-price">Rp 350.000</p>
+                    <button class="btn-buy">Beli Sekarang</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Sederhana -->
+    <footer class="site-footer">
+        <p>&copy; 2026 TokoElektronik.id. Hak cipta dilindungi.</p>
+    </footer>
+
+</body>
+</html>
